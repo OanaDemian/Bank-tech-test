@@ -8,11 +8,17 @@ class BankAccountModel {
     return this.ballance;
   }
   newTransaction(transaction) {
-    if (transaction.type === 'credit') {
-      this.ballance += transaction.amount
+    if (transaction.type === "credit") {
+      this.ballance += transaction.amount;
+      this.transactions.push(transaction);
     } else {
-      this.ballance -= transaction.amount
+      this.ballance -= transaction.amount;
+      this.transactions.push(transaction);
     }
+  }
+
+  allTransactions() {
+    return this.transactions;
   }
 }
 
