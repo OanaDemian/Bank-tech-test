@@ -13,18 +13,24 @@ class BankAccountView {
     return printTransactionAmount;
   }
 
+  transationsArrayFormatedForDisplay(transactions) {
+    return transactions
+      .map((eachTransaction) => {
+        return `${
+          eachTransaction.transaction.date
+        } ${this.printTransactionAmountByType(
+          eachTransaction.transaction
+        )} ${eachTransaction.updatedBallance.toFixed(2)}`;
+      })
+      .reverse();
+  }
+
   printStatement(transactions) {
     console.log("date || credit || debit || balance");
     console.log(
-      transactions
-        .map((transaction) => {
-          return `${transaction.date} ${this.printTransactionAmountByType(
-            transaction
-          )} ${this.account.getBallance().toFixed(2)}`;
-        })
-        .reverse()
-        .join("\n")
+      this.transationsArrayFormatedForDisplay(transactions).join("\n")
     );
   }
 }
+
 module.exports = BankAccountView;

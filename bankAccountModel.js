@@ -10,10 +10,16 @@ class BankAccountModel {
   newTransaction(transaction) {
     if (transaction.type === "credit") {
       this.ballance += transaction.amount;
-      this.transactions.push(transaction);
+      this.transactions.push({
+        transaction: transaction,
+        updatedBallance: this.ballance,
+      });
     } else {
       this.ballance -= transaction.amount;
-      this.transactions.push(transaction);
+      this.transactions.push({
+        transaction: transaction,
+        updatedBallance: this.ballance,
+      });
     }
   }
 
