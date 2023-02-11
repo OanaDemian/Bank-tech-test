@@ -25,9 +25,7 @@ class BankAccountView {
 
   printStatement(transactions) {
     console.log("date || credit || debit || balance");
-    console.log(
-      this.transationsArrayFormatedForDisplay(transactions).join("\n")
-    );
+    console.log(this.transationsArrayFormatedForDisplay(transactions).join("\n"));
   }
 }
 
