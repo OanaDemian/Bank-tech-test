@@ -8,18 +8,18 @@ class BankAccountModel {
     return this.ballance;
   }
   newTransaction(transaction) {
+    this.#privateUpdateBallance(transaction);
+    this.transactions.push({
+      transaction: transaction,
+      updatedBallance: this.ballance,
+    });
+  }
+
+  #privateUpdateBallance(transaction) {
     if (transaction.type === "credit") {
       this.ballance += transaction.amount;
-      this.transactions.push({
-        transaction: transaction,
-        updatedBallance: this.ballance,
-      });
     } else {
       this.ballance -= transaction.amount;
-      this.transactions.push({
-        transaction: transaction,
-        updatedBallance: this.ballance,
-      });
     }
   }
 
