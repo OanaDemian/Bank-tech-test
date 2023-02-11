@@ -1,6 +1,11 @@
 const BankAccountModel = require("./bankAccountModel");
 const TransactionModel = require("./transactionModel");
 describe("BankModel", () => {
+  it("has a starting ballance of 0", () => {
+    const account = new BankAccountModel();
+    expect(account.getBallance()).toEqual(0);
+  });
+
   it("displays the ballance 1000 for: a client makes a deposit of 1000 on 10-01-2023", () => {
     const account = new BankAccountModel();
     const transaction = new TransactionModel("10/01/2023", "credit", 1000);
