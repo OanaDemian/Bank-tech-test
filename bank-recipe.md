@@ -26,7 +26,7 @@ Data Model Example:
 
 {'date': dd/mm/yy, 'type' : 'credit', 'amount' : 1000}
 
-To be copy pasted into Node
+To be ran in Node - REPL Terminal
 
 const BankAccountView = require("./bankAccountView");
 const BankAccountModel = require("./bankAccountModel");
