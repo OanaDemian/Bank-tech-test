@@ -16,7 +16,7 @@ class BankAccountModel {
   }
 
   #privateUpdateBallance(transaction) {
-    if (transaction.type === "credit") {
+    if (transaction.type === 'credit') {
       this.ballance += transaction.amount;
     } else {
       this.ballance -= transaction.amount;

@@ -4,7 +4,7 @@ class BankAccountView {
   }
 
   printTransactionAmountByType(transaction) {
-    if (transaction.type === "credit") {
+    if (transaction.type === 'credit') {
       return `|| ${transaction.amount.toFixed(2)} || ||`;
     } else {
       return `|| || ${transaction.amount.toFixed(2)} ||`;
@@ -18,14 +18,14 @@ class BankAccountView {
           ballanceUpdate.transaction.date,
           this.printTransactionAmountByType(ballanceUpdate.transaction),
           ballanceUpdate.updatedBallance.toFixed(2),
-        ].join(" ")
+        ].join(' ')
       )
       .reverse();
   }
 
   printStatement(transactions) {
-    console.log("date || credit || debit || balance");
-    console.log(this.transationsArrayFormatedForDisplay(transactions).join("\n"));
+    console.log('date || credit || debit || balance');
+    console.log(this.transationsArrayFormatedForDisplay(transactions).join('\n'));
   }
 }
 
