@@ -43,3 +43,6 @@ undefined
 >
 
 Alternatively you can simply run: `node runMe.js` which will do the same as the above.
+
+
+![image](./screenshot.png)
