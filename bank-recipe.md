@@ -24,4 +24,7 @@ date || credit || debit || balance
 
 Data Model Example:
 
-{'date': dd/mm/yy, 'type' : 'credit', 'amount' : 1000}
+Transaction
+{'date': '10/01/23', 'type' : 'credit', 'amount' : 1000}
+Account
+{[{'10/01/23','credit',1000}], updatedBalance: 1000}
